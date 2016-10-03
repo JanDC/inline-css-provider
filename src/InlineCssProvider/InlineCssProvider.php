@@ -5,10 +5,10 @@ namespace InlineCssProvider;
 use InlineCssProvider\Exception\MissingDependencyException;
 use InlineCssProvider\Service\RenderService;
 use InlineCssProvider\Service\WrapperService;
+use Silex\Api\BootableProviderInterface;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
 
-class InlineCssProvider implements ServiceProviderInterface
+class InlineCssProvider implements BootableProviderInterface
 {
     /** @var  string */
     private $pathToCss;
@@ -35,5 +35,19 @@ class InlineCssProvider implements ServiceProviderInterface
         } else {
             $app['inlinecss.render'] = new MissingDependencyException("In order to use the direct render service, you need to have a twig enviroment registered!");
         }
+    }
+
+    /**
+     * Bootstraps the application.
+     *
+     * This method is called after all services are registered
+     * and should be used for "dynamic" configuration (whenever
+     * a service must be requested).
+     *
+     * @param Application $app
+     */
+    public function boot(Application $app)
+    {
+        // TODO: Implement boot() method.
     }
 }

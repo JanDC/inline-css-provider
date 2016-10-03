@@ -30,7 +30,7 @@ class RenderService
      *
      * @return string Rendered Template with inline styles
      */
-    public function RenderAndInlineTemplate($template, array $context)
+    public function renderAndInlineTemplate($template, array $context)
     {
         $resolvedAndRenderedTemplate = $this->twig->render($template, $context);
         return $this->wrapperService->generateInlineCssFromString($resolvedAndRenderedTemplate);
