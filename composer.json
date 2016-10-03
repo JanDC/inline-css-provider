@@ -1,5 +1,5 @@
 {
-  "name": "jandc/InlineCssProvider",
+  "name": "jandc/inline-css-provider",
   "description": "Silex provider which wraps the features of CssToInlineStyles",
   "homepage": "https://github.com/JanDC/InlineCssProvider",
   "keywords": [
