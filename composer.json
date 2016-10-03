@@ -1,0 +1,35 @@
+{
+  "name": "jandc/InlineCssProvider",
+  "description": "Silex provider which wraps the features of CssToInlineStyles",
+  "homepage": "https://github.com/JanDC/InlineCssProvider",
+  "keywords": [
+    "Twig",
+    "Silex",
+    "PHP",
+    "Css",
+    "Email markup"
+  ],
+  "license": "ISC",
+  "require": {
+    "tijsverkoyen/css-to-inline-styles": ">=2.0",
+    "silex/silex": ">=1.2"
+  },
+  "suggest": {
+    "twig/twig": ">=1.0"
+  },
+  "require-dev": {
+    "twig/twig": ">=1.0"
+  },
+  "authors": [
+    {
+      "name": "Jan Decavele",
+      "email": "jandecavele@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "InlineCssProvider\\": "src/InlineCssProvider"
+    }
+  }
+}
