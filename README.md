@@ -17,9 +17,7 @@ Additional feature(s) are:
  ## sample
  <code>
    $app->register(new InlineCssProvider(__DIR__.'/Resources/views/mails/css/main.css')); <br>
-   ...
-   ...
-   ...
+  
    <br>
    
      $email = new \Swift_Message(
