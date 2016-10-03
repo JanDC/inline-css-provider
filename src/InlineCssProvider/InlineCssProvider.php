@@ -5,8 +5,8 @@ namespace InlineCssProvider;
 use InlineCssProvider\Exception\MissingDependencyException;
 use InlineCssProvider\Service\RenderService;
 use InlineCssProvider\Service\WrapperService;
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
+use Silex\Application;
+use Silex\ServiceProviderInterface;
 
 class InlineCssProvider implements ServiceProviderInterface
 {
@@ -24,16 +24,16 @@ class InlineCssProvider implements ServiceProviderInterface
      * This method should only be used to configure services and parameters.
      * It should not get services.
      *
-     * @param Container $appContainer A container instance
+     * @param Application $app A container instance
      */
-    public function register(Container $appContainer)
+    public function register(Application $app)
     {
-        $appContainer['inlinecss.inlinecss'] = new WrapperService($this->pathToCss);
+        $app['inlinecss.inlinecss'] = new WrapperService($this->pathToCss);
 
-        if (isset($appContainer['twig'])) {
-            $appContainer['inlinecss.render'] = new RenderService($appContainer['inlinecss.inlinecss'], $appContainer['twig']);
+        if (isset($app['twig'])) {
+            $app['inlinecss.render'] = new RenderService($app['inlinecss.inlinecss'], $app['twig']);
         } else {
-            $appContainer['inlinecss.render'] = new MissingDependencyException("In order to use the direct render service, you need to have a twig enviroment registered!");
+            $app['inlinecss.render'] = new MissingDependencyException("In order to use the direct render service, you need to have a twig enviroment registered!");
         }
     }
 }
