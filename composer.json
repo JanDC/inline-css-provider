@@ -12,7 +12,7 @@
   "license": "ISC",
   "require": {
     "tijsverkoyen/css-to-inline-styles": ">=2.0",
-    "silex/silex": ">=1.2"
+    "silex/silex": ">=1.2,<2.0"
   },
   "suggest": {
     "twig/twig": ">=1.0"

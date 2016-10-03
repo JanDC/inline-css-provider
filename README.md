@@ -1,5 +1,7 @@
 # InlineCssProvider
 
+### Note: due to the (personal) need to be bolt.cm compliant; silex2 is not supported!!!
+
 InlineCssProvider is a silex compliant serviceprovider of the CssToInlineStyles class by Tijs Verkoyen (https://github.com/tijsverkoyen/CssToInlineStyles).
 
 Additional feature(s) are:

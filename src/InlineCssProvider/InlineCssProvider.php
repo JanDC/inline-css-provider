@@ -5,10 +5,10 @@ namespace InlineCssProvider;
 use InlineCssProvider\Exception\MissingDependencyException;
 use InlineCssProvider\Service\RenderService;
 use InlineCssProvider\Service\WrapperService;
-use Silex\Api\BootableProviderInterface;
+use Silex\ServiceProviderInterface;
 use Silex\Application;
 
-class InlineCssProvider implements BootableProviderInterface
+class InlineCssProvider implements ServiceProviderInterface
 {
     /** @var  string */
     private $pathToCss;
